@@ -68,7 +68,7 @@ function draw() {
         fruitGroup.setVelocityXEach(0);
         monsterGroup.setVelocityXEach(0);
 
-        //Mude a imagem da espada para fim de jogo e redefina sua posição
+        
         knife.addImage(gameOverImage);
         knife.scale = 1;
         knife.x = 300;
@@ -91,10 +91,10 @@ function Monster() {
     monster.addAnimation("moving", monsterImage);
     monster.velocityX = -(8 + score / 10);
 
-    //monster.setLifetime=50; // Errado: setLifetime é método, deve usar monster.setLifetime(50);
-    monster.setLifetime(50); // Corrigido!
+    
+    monster.setLifetime(50); //corrigido
 
-    monsterGroup.add(monster);
+    monsterGroup.add(monster); 
   }
 }
 
@@ -103,7 +103,7 @@ function fruits() {
     fruit = createSprite(0, Math.round(random(50, 550)), 20, 20);
     //fruit.x = 0  --> já definido no createSprite
 
-    //Ajustar direção aleatória da fruta
+    
     position = Math.round(random(1, 2));
     if (position == 1) {
       fruit.x = 0;
@@ -125,11 +125,10 @@ function fruits() {
       fruit.addImage(fruit4);
     }
 
-    //fruit.y = Math.round(random(50, 550)); // Já definido no createSprite
+    
 
-    //fruit.setLifetime=100; // Errado! Deve ser método:
-    fruit.setLifetime(100); // Corrigido
+    fruit.setLifetime(100); // corrigido
 
     fruitGroup.add(fruit);
-  }
+ } 
 }
